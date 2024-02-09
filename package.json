@@ -13,7 +13,7 @@
   "main": "./dist/extension.js",
   "contributes": {
     "menus": {
-      "editor/context": [
+      "editor/title": [
           {
               "when": "resourceLangId == scilab",
               "command": "extension.runScilabScript",
@@ -23,11 +23,9 @@
   },
     "commands": [
       {
-        "command": "scilabterminal.helloWorld",
-        "title": "Hello World"
-      }, {
         "command": "extension.runScilabScript",
-        "title": "Run Scilab Script"
+        "title": "Run Scilab Script",
+        "icon": "$(play)"
     }
     ],
     "configuration": {
@@ -36,8 +34,8 @@
       "properties": {
           "scilabIntegration.scilabPath": {
               "type": "string",
-              "default": "",
-              "description": "C:\\Program Files\\scilab-6.1.1\\bin\\WScilex-cli.exe"
+              "default": "C:/Program Files/scilab-6.1.1/bin/WScilex-cli.exe",
+              "description": "L'endroit de votre console scilab (advanced version)"
           }
       }
   }
