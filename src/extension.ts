@@ -8,7 +8,7 @@ export function activate(context: vscode.ExtensionContext) {
             return;
         }
 
-        const scilabPath = vscode.workspace.getConfiguration('scilabIntegration').get('scilabPath') || 'scilab';
+        const scilabPath = vscode.workspace.getConfiguration('scilabIntegration').get<string>('scilabPath');
         const filePath = editor.document.fileName;
         const fileName = filePath.split(/\\|\//).pop(); // Compatible avec Windows et Unix
 
@@ -24,8 +24,12 @@ export function activate(context: vscode.ExtensionContext) {
         const terminalExisted = terminal ? true : false; // Nouvelle variable pour vérifier si le terminal existait déjà
 
         if (!terminal) {
-            terminal = vscode.window.createTerminal({ name: "Scilab",shellPath: scilabPath });
-            // Peut-être attendre que le terminal soit prêt (facultatif, selon votre cas d'usage)
+            // Créer un nouveau terminal avec les options spécifiées
+            terminal = vscode.window.createTerminal({
+                name: "Scilab", // Nom du terminal
+                shellPath: scilabPath 
+
+            });
         }
 
         terminal.show();
