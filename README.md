@@ -1,4 +1,4 @@
-# Scilab Script Runner for VS Code
+# Scilab terminal for visual studio code
 
 Cette extension pour Visual Studio Code permet aux utilisateurs d'exécuter facilement des scripts Scilab directement depuis l'éditeur, offrant une intégration fluide pour les développeurs et les scientifiques qui travaillent avec Scilab dans leur quotidien.
 
@@ -27,15 +27,15 @@ Après l'installation, vous pouvez avoir besoin de configurer le chemin d'accès
 
 1. Ouvrez les Paramètres de VS Code (fichier `settings.json`).
 2. Ajoutez la configuration suivante, en remplaçant `<chemin-vers-scilab>` par le chemin d'accès réel à votre exécutable Scilab (WScilex-cli.exe) :
-
-"scilabIntegration.scilabPath": "<chemin-vers-scilab>"
-
+```json
+"scilabIntegration.scilabPath": "<chemin-vers-scilab>" //très souvent: C:/Program Files/scilab-2024.0.0/bin/WScilex-cli.exe
+```
 ## Utilisation
 
 Pour exécuter un script Scilab :
 
 Ouvrez votre fichier .sce avec VS Code.
-Cliquez avec le bouton droit de la souris sur le texte de l'éditeur et sélectionnez Run Scilab Script, ou utilisez le raccourci clavier défini.
+Cliquez avec le bouton droit de la souris sur le texte de l'éditeur et presser le bouton play en haut à droite de votre IDE, ou utilisez le raccourci clavier défini. La console de Scilab apparaitra dans le terminal intégrer de Visual studio code et vous pourrez désormais utiliser vscode comme outils principal de Scilab.
 
 ## Contribution
 
