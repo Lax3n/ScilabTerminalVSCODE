@@ -35,7 +35,7 @@ export function activate(context: vscode.ExtensionContext) {
         terminal.show();
 
         // Construit la commande en fonction de l'existence préalable du terminal
-        const command = terminalExisted ? `exec("./${fileName}", -1);` : `exec("./${fileName}", -1);`;
+        const command = terminalExisted ? `exec("${filePath}", -1);` : `exec("${filePath}", -1);`;
         terminal.sendText(command, true);
     });
 
